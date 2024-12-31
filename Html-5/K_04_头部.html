@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>K_04_头部</title>
+
+<!-- base标签--描述了基本的链接地址/链接目标，该标签作为HTML文档中所有的链接标签的默认链接:-->
+<base href="https://www.runoob.com/images/" target="_blank">
+
+<!-- meta标签 -->
+<meta name="Description" content="免费在线教程">
+<meta name="keywords" content="HTML,CSS,XML,JavaScript">
+<meta name="author" content="runoob">
+<!-- 每20秒钟刷新当前页面: -->
+<meta http-equiv="refresh" content="20">
+
+<!-- <link> 标签定义了文档与外部资源之间的关系。标签通常用于链接到样式表: -->
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+
+<!-- <style> 标签定义了HTML文档的样式文件引用地址.你也可以直接添加样式来渲染 HTML 文档: -->
+<style type="text/css">
+    body {
+        background-color: orange;
+    }
+    p {
+        background-color: aqua;
+        color:blue
+    }
+    </style>
+
+</head>
+<body>
+
+    <p>浏览器中包含body元素的内容。</p>
+    <p>浏览器的标题包含title元素的内容</p>
+
+<img src="logo.png"> - 注意这里我们设置了图片的相对地址。能正常显示是因为我们在 head 部分设置了 base 标签，该标签指定了页面上所有链接的默认 URL，所以该图片的访问地址为 "https://www.runoob.com/images/logo.png"
+<br><br>
+<a href="https://www.runoob.com">菜鸟教程</a> - 注意这个链接会在新窗口打开，即便它没有 target="_blank" 属性。因为在 base 标签里我们已经设置了 target 属性的值为 "_blank"。
+
+<!-- meta标签 -->
+<p>所有 meta 标签显示在 head 部分...</p>
+
+</body>
+</html>
