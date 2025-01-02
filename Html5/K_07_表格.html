@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>K_07_表格</title>
+
+    <!-- 外用css样式 -->
+    <link rel="stylesheet" type="text/css" href="/CSS/K_07_表格.css">
+
+</head>
+
+<body>
+
+    <!-- 这个表格没有边框 -->
+    <h4 style="color: red;">这个表格没有边框</h4>
+    <table>
+        <tr>
+            <td>100</td>
+            <td>200</td>
+            <td>300</td>
+        </tr>
+        <tr>
+            <td>400</td>
+            <td>500</td>
+            <td>600</td>
+        </tr>
+    </table>
+
+    <!-- 以下是一个简单的 HTML 表格实例: -->
+    <h4 style="color: red">以下是一个简单的 HTML 表格实例</h4>
+    <table border="1" cellspacing="0">
+        <!-- 标题 -->
+        <caption>表格的标题</caption>
+        <thead>
+            <tr>
+                <th>标题1</th>
+                <th>标题2</th>
+                <th>标题3</th>
+            </tr>
+        </thead>
+        <!-- 行一、行二数据 -->
+        <tbody>
+            <tr>
+                <td>行一、列一</td>
+                <td>行一、列二</td>
+                <td>行一、列三</td>
+            </tr>
+            <tr>
+                <td>行二，列一</td>
+                <td>行二，列二</td>
+                <td>行二，列三</td>
+            </tr>
+        </tbody>
+
+    </table>
+
+    <!-- 单元格跨两行例子 -->
+    <h4 style="color: red;">单元格跨两行</h4>
+    <!-- 行跨两行 -->
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th colspan="2">Telephone</th>
+        </tr>
+        <tr>
+            <td>Bill Gates</td>
+            <td>555 77 854</td>
+            <td>555 77 855</td>
+        </tr>
+    </table>
+    <!-- 列跨两行 -->
+    <br>
+    <table border="1">
+        <tr>
+            <th>First Name:</th>
+            <td>Bill Gates</td>
+        </tr>
+        <tr>
+            <th rowspan="2">Telephone:</th>
+            <td>555 77 854</td>
+        </tr>
+        <tr>
+            <td>555 77 855</td>
+        </tr>
+    </table>
+
+    <!-- 本例演示如何在不同的元素内显示元素。 -->
+    <h4 style="color: red;">本例演示如何在不同的元素内显示元素。</h4>
+    <table border="1">
+        <!-- 第一行单元格 -->
+        <tr>
+            <!-- 这是一个段落 -->
+            <td>
+                <p>这是一个段落</p>
+                <p>这是另一个段落</p>
+            </td>
+            <!-- 这个单元格包含一个表格: -->
+            <td>这个单元格包含一个表格:
+                <table border="1">
+                    <tr>
+                        <td>A</td>
+                        <td>B</td>
+                    </tr>
+                    <tr>
+                        <td>C</td>
+                        <td>D</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <!-- 第二行单元格 -->
+        <tr>
+            <td>这个单元格包含一个列表
+                <ul>
+                    <li>apples</li>
+                    <li>bananas</li>
+                    <li>pineapples</li>
+                </ul>
+            </td>
+            <td>这是一个默认的单元格</td>
+        </tr>
+    </table>
+
+    <!-- 单元格间距10 -->
+    <h4 style="color: red;">单元格间距10 </h4>
+    <table border="1" cellspacing="10">
+        <tr>
+            <td>100</td>
+            <td>200</td>
+        </tr>
+        <tr>
+            <td>300</td>
+            <td>400</td>
+        </tr>
+    </table>
+
+    <!-- 受理员业务统计表 -->
+    <h4 style="color: red;">受理员业务统计表</h4>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+        <tr>
+            <td align="center" class="biaoti" height="60">受理员业务统计表</td>
+        </tr>
+        <tr>
+            <td align="right" height="25">2024-01-01 -- 2024-12-31</td>
+        </tr>
+    </table>
+    <!-- 受理员业务统计表顶部标题部分 -->
+    <table width="100%" border="0" cellspacing="1" cellpadding="4" bgcolor="#cccccc" class="tabtop13" align="center">
+        <tr>
+            <td colspan="2" class="btbg font-center titfont" rowspan="2">受理员</td>
+            <td width="10%" class="btbg font-center titfont" rowspan="2">受理数</td>
+            <td width="10%" class="btbg font-center titfont" rowspan="2">自办数</td>
+            <td width="10%" class="btbg font-center titfont" rowspan="2">直接解答</td>
+            <td colspan="2" class="btbg font-center titfont">拟办意见</td>
+            <td colspan="2" class="btbg font-center titfont">返回修改</td>
+            <td colspan="3" class="btbg font-center titfont">工单类型</td>
+        </tr>
+        <tr>
+            <td width="8%" class="btbg font-center">同意</td>
+            <td width="8%" class="btbg font-center">比例</td>
+            <td width="8%" class="btbg font-center">数量</td>
+            <td width="8%" class="btbg font-center">比例</td>
+            <td width="8%" class="btbg font-center">建议件</td>
+            <td width="8%" class="btbg font-center">诉求件</td>
+            <td width="8%" class="btbg font-center">咨询件</td>
+        </tr>
+        <!-- 受理处 -->
+        <tr>
+            <td width="7%" rowspan="8" class="btbg1 font-center">受理处</td>
+            <td width="7%" class="btbg2 font-center">王艳</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="btbg2 font-center">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="btbg2 font-center">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="btbg2 font-center">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="btbg2 font-center">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="btbg2 font-center">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="btbg2 font-center">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="btbg2 font-center">总计</td>
+            <td class="btbg2 font-center">20</td>
+            <td class="btbg2 font-center">20</td>
+            <td class="btbg2 font-center">20</td>
+            <td class="btbg2 font-center">20</td>
+            <td class="btbg2 font-center">20</td>
+            <td class="btbg2 font-center">20</td>
+            <td class="btbg2 font-center">20</td>
+            <td class="btbg2 font-center">20</td>
+            <td class="btbg2 font-center">20</td>
+            <td class="btbg2 font-center">20</td>
+        </tr>
+        <!-- 话务组 -->
+        <tr>
+            <td width="7%" rowspan="8" class="btbg1 font-center">话务组</td>
+            <td width="7%" class="btbg2 font-center">王艳</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="btbg2 font-center">张三</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="btbg2 font-center">李四</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="btbg2 font-center">王五</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="btbg2 font-center">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="btbg2 font-center">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="btbg2 font-center">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="btbg2 font-center">总计</td>
+            <td class="btbg2 font-center">20</td>
+            <td class="btbg2 font-center">20</td>
+            <td class="btbg2 font-center">20</td>
+            <td class="btbg2 font-center">20</td>
+            <td class="btbg2 font-center">20</td>
+            <td class="btbg2 font-center">20</td>
+            <td class="btbg2 font-center">20</td>
+            <td class="btbg2 font-center">20</td>
+            <td class="btbg2 font-center">20</td>
+            <td class="btbg2 font-center">20</td>
+        </tr>
+
+    </table>
+
+
+
+</body>
+
+</html>
