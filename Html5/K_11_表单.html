@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>K_11_表单</title>
+</head>
+
+<body>
+
+    <!-- 一个表单，包含两个输入框：-->
+    <h4 style="color: red;">表单，包含两个输入框</h4>
+    <form action="">
+        <fieldset>
+            <legend>登录信息</legend>
+            账号: <input type="text" name="account" required>
+            <br>
+            密码: <input type="password" name="pwd" required>
+        </fieldset>
+    </form>
+
+    <!-- 文本框：-->
+    <h4 style="color: red;">文本框</h4>
+    <textarea name="textarea" id="textarea" rows="10" cols="30">我是一个文本框
+    </textarea>
+
+    <!-- 单选按钮（Radio Buttons） -->
+    <h4 style="color: red;">单选按钮（Radio Buttons）</h4>
+    <form action="">
+        <input type="radio" name="sex" value="male">男
+        <br>
+        <input type="radio" name="sex" value="female">女
+    </form>
+
+    <!-- 复选框（Checkboxes） -->
+    <h4 style="color: red;">复选框（Checkboxes）</h4>
+    <form action="">
+        <input type="checkbox" name="checkbox1" value="Bike">我喜欢自行车
+        <br>
+        <input type="checkbox" name="checkbox2" value="Car">我喜欢小汽车
+    </form>
+
+    <!-- 下拉列表 -->
+    <h4 style="color: red;">下拉列表</h4>
+    <label for="country">国家：</label>
+    <select name="country" id="country">
+        <option value="CN">CN</option>
+        <option value="USA" selected>USA</option>
+        <option value="UK">UK</option>
+    </select>
+
+    <!-- 提交按钮(Submit） -->
+    <h4 style="color: red;">提交按钮(Submit)</h4>
+    <form action="">
+        Username: <input type="text" name="user">
+        <input type="submit" name="submit1" value="提交">
+    </form>
+
+    <!-- 自定义按钮(Button） -->
+    <h4 style="color: red;">发送邮件 <span style="color: seagreen;">mailto:someone@example.com</h4>
+    <form action="mailto:someone@example.com" method="post" enctype="text/plain">
+        <input type="submit" name="button1" value="发送">
+    </form>
+
+</body>
+
+</html>
