@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head> 
+    <meta charset="utf-8"> 
+    <title>K_101_Canvas</title> 
+</head>
+
+<body>
+
+    <!-- 边框画布、部分黑色 -->
+    <p style="color: red;">边框画布</p>
+    <canvas id="myCanvas" width="200" height="100" style="border: 1px solid black;">
+        您的浏览器不支持 HTML5 canvas 标签。
+    </canvas>
+    <script>
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.fillStyle = "#FF0000";
+        ctx.fillRect(0, 0, 150, 75);
+    </script>
+    <!-- 边框画布、斜线 -->
+    <script>
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.moveTo(0, 0);
+        ctx.lineTo(200, 100);
+        ctx.stroke();
+    </script>
+    <!-- 边框画布、圆 -->
+    <script>
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.beginPath();
+        ctx.arc(45, 50, 40, 0, 2 * Math.PI);
+        ctx.stroke();
+    </script>
+    <!-- 边框画布、文字hello,world -->
+    <script>
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.font = "30px Arial";
+        ctx.fillStyle = "#000000";
+        ctx.fillText("Hello World", 10, 50);
+        ctx.stroke();
+    </script>
+
+    <!-- 边框画布图片 -->
+    <p style="color: red;">Image to Use</p>
+    <img id="scream" src="/Images/1024x1024.png" alt="这是一个图片" width="200" height="200">
+    <p style="color: red;">Canvas</p>
+    <canvas id="myCanvasImage" width="200" height="200" style="border: 1px, solid #000000;">
+        您的浏览器不支持 HTML5 canvas 标签。
+    </canvas>
+    <script>
+        var c = document.getElementById("myCanvasImage");
+        var ctx = c.getContext("2d");
+        var img = document.getElementById("scream");
+        img.onload = function () {
+            ctx.drawImage(img, 10, 10, 180, 180);
+        }
+    </script>
+
+
+
+</body>
+
+</html>
