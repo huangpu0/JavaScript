@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head> 
+    <meta charset="utf-8"> 
+    <title>K_108_表单</title> 
+</head>
+
+<body>
+
+    <!-- datalist -->
+    <p style="color: red;">表单元素datalist</p>
+    <form action="demo-form.php" method="get">
+        <input list="browsers" name="browser">
+        <datalist id="browsers">
+            <option value="Internet Explorer">
+            <option value="Firefox">
+            <option value="Chrome">
+            <option value="Opera">
+            <option value="Safari">
+        </datalist>
+        <input type="submit">
+    </form>
+
+    <!-- keygen -->
+    <p style="color: red;">表单元素keygen</p>
+    <form action="demo_keygen.php" method="get">
+        用户名: <input type="text" name="usr_name">
+        加密: <keygen name="security">
+        <input type="submit">
+    </form>
+    <p><strong>注意:</strong> Internet Explorer 不支持 keygen 标签。</p>
+
+    <!-- output -->
+    <p style="color: red;">表单元素output</p>
+    <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">0
+        <input type="range" id="a" value="50">100
+        +<input type="number" id="b" value="50">
+        =<output name="x" for="a b">100</output>
+    </form>
+    <p><strong>注意:</strong> Edge 12及更早 IE 版本的浏览器不支持 output 元素。</p>
+
+    <!-- 新元素nav -->
+    <p style="color: red;">新元素nav</p>
+    <nav>
+        <a href="K_01_基础.html">HTML</a> |
+        <a href="K_02_属性.html">CSS</a> |
+        <a href="K_03_链接.html">JavaScript</a> |
+        <a href="K_04_头部.html">jQuery</a>
+    </nav>
+    
+
+</body>
+
+</html>
