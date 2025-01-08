@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head> 
+    <meta charset="utf-8"> 
+    <title>K_105_视频</title> 
+</head>
+
+<body>
+
+    <!-- 视频播放 -->
+    <p style="color: red;">视频播放1 默认播放</p>
+    <video src="/Resources/movie.mp4" width="440" height="340" controls>
+        <source src="movie.mp4" type="video/mp4">
+        <source src="movie.ogg" type="video/ogg">
+        您的浏览器不支持 HTML5 video 标签。
+    </video>
+
+    <!-- 视频播放 -->
+    <p style="color: red;">视频播放2 代码控制视频播放</p>
+    <div style="text-align: left;">
+        <button onclick="playPauseVideo()">播放/暂停</button>
+        <button onclick="makeBig()">放大</button>
+        <button onclick="makeSmall()">缩小</button>
+        <button onclick="makeNormal()">普通</button>
+        <br>
+        <br>
+        <video id="video1" src="/Resources/mov_bbb.mp4" width="440">
+            <source src="mov_bbb.mp4" type="video/mp4">
+            <source src="mov_bbb.ogg" type="video/ogg">
+            您的浏览器不支持 HTML5 video 标签。
+        </video>
+    </div>
+    <!-- 代码控制视频播放 -->
+    <script>
+        var myVideo = document.getElementById("video1");
+        function playPauseVideo() {
+            if (myVideo.paused) {
+                myVideo.play()
+            } else {
+                myVideo.pause()
+            }
+        }
+        function makeBig() {
+            myVideo.width = 560;
+        }
+        function makeSmall() {
+            myVideo.width = 320;
+        }
+        function makeNormal() {
+            myVideo.width = 440;
+        }
+    </script>
+
+
+
+</body>
+
+</html>
