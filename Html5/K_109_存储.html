@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head> 
+    <meta charset="utf-8"> 
+    <title>K_109_存储</title> 
+</head>
+
+<body>
+
+    <!-- localStorage存储数据 -->
+    <p><button onclick="clickCounter()" type="button">点我！</button></p>
+    <div id="result"></div>
+    <p style="color: red;">localStorage 对象存储的数据没有时间限制。关闭浏览器选项卡(或窗口),重新打开此页面,计数器将继续计数(不是重置)。</p>
+    <script>
+        function clickCounter() {
+            if (typeof (Storage) !== "undefined") {
+                if (localStorage.clickcount) {
+                    localStorage.clickcount = Number(localStorage.clickcount) + 1;
+                } else {
+                    localStorage.clickcount = 1;
+                }
+                document.getElementById("result").innerHTML = "你已经点击了" + localStorage.clickcount + "次";
+            } else {
+                document.getElementById("result").innerHTML = "对不起，您的浏览器不支持 web 存储。";
+            }
+        }
+    </script>
+    <br>
+
+    <!-- sessionStorage存储数据 -->
+    <p>sessionStorage与localStorage存储API是一致的、存储实效不一样</p>
+    <p style="color: red;">sessionStorage是用户关闭浏览器窗口后，数据会被删除</p>
+    <p style="color: red;">
+        <span style="color:black">保存数据：</span>localStorage.setItem(key,value);
+        <br>
+        <span style="color:black">读取数据：</span>localStorage.getItem(key);
+        <br>
+        <span style="color:black">删除单个数据：</span>localStorage.removeItem(key);
+        <br>
+        <span style="color:black">删除所有数据：</span>localStorage.clear();
+        <br>
+        <span style="color:black">得到某个索引的key：</span>localStorage.key(index);
+    </p>
+
+    
+</body>
+
+</html>
