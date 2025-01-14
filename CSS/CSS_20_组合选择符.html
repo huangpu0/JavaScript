@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>CSS_20_组合选择符</title>
+    <style>
+        div p {
+            background-color: yellow;
+        }
+        /* 匹配所有<p> 元素中的第一个 <i> 元素 */
+        p:first-child i {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <p>段落 1。 <i>在</i> div 中。</p>
+        <p>段落 2。 在 div 中。</p>
+    </div>
+
+    <p>段落 3。不在 div 中。</p>
+    <p>段落 4。不在 div 中。</p>
+
+    <!-- div+p  div~p -->
+    <p>div+p位于 <span style="color: red;">'div' <span style="color: black;">元素后的第一个 <span style="color: red;">'p' <span
+                        style="color: black;">元素</p>
+
+    <p>div~p位于 <span style="color: red;">'div' <span style="color: black;">元素之后的所有相邻兄弟 <span style="color: red;">'p'
+                    <span style="color: black;">元素</p>
+
+</body>
+
+</html>
