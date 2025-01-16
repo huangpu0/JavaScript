@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>CSS3_103_渐变</title>
+    <style>
+        /* 从上至下 */
+        #grad1 {
+            height: 200px;
+            /* 浏览器不支持时显示 */
+            background-color: red;
+            background-image: linear-gradient(#e66465, #9198e5);
+        }
+
+        /* 从左至右 */
+        #grad2 {
+            height: 200px;
+            background-image: linear-gradient(to right, red, yellow);
+        }
+
+        /* 对角 */
+        #grad3 {
+            height: 200px;
+            background-image: linear-gradient(to bottom right, red, yellow);
+        }
+
+        /* 重复性渐变 */
+        #grad4 {
+            height: 200px;
+            background-image: repeating-linear-gradient(red, yellow 10%, green 20%);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 从上至下 -->
+    <h3>线性渐变 - 从上到下</h3>
+    <p>从顶部开始的线性渐变。起点是红色，慢慢过渡到蓝色：</p>
+    <div id="grad1"></div>
+
+    <!-- 从左至右 -->
+    <h3>线性渐变 - 从左到右</h3>
+    <p>从顶部开始的线性渐变。起点是红色，慢慢过渡到黄色：</p>
+    <div id="grad2"></div>
+
+    <!-- 对角 -->
+    <h3>线性渐变 - 对角</h3>
+    <p>从顶部开始的线性渐变。起点是红色，慢慢过渡到黄色：</p>
+    <div id="grad3"></div>
+
+    <!-- 重复性渐变 -->
+    <h3>线性渐变 - 重复性渐变</h3>
+    <p>从顶部开始的线性渐变。起点是红色，慢慢过渡到黄色：</p>
+    <div id="grad4"></div>
+
+</body>
+
+</html>

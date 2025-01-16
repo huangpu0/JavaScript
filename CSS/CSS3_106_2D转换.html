@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>CSS3_106_2D转换</title>
+    <style>
+        div {
+            width: 100px;
+            height: 75px;
+            background-color: red;
+            border: 1px solid black;
+        }
+
+        /* rotate()方法，在一个给定度数顺时针旋转的元素。负值是允许的，这样是元素逆时针旋转。 */
+        div#div2 {
+            transform: rotate(75deg);
+            /* IE 9 */
+            -ms-transform: rotate(30deg);
+            /* Safari and Chrome */
+            -webkit-transform: rotate(30deg);
+        }
+
+        /* 元素在 X 轴和 Y 轴上倾斜 20 度 30 度。 */
+        div#div3 {
+            transform: skew(30deg, 20deg);
+            /* IE 9 */
+            -ms-transform: skew(30deg, 20deg);
+            /* Safari and Chrome */
+            -webkit-transform: skew(30deg, 20deg);
+        }
+
+        /* translate()方法，根据左(X轴)和顶部(Y轴)位置给定的参数，从当前元素位置移动。 */
+        div#div4 {
+            transform: translate(50px, 100px);
+            /* IE 9 */
+            -ms-transform: translate(50px, 100px);
+            /* Safari and Chrome */
+            -webkit-transform: translate(50px, 100px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>你好。这是一个 DIV 元素。</div>
+
+    <div id="div2">rotate()方法，在一个给定度数顺时针旋转的元素.</div>
+
+    <div id="div3">skew() - X 轴和 Y 轴上倾斜.</div>
+
+    <div id="div4">translate()方法，从当前元素位置移动.</div>
+
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>CSS3_109_动画</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position:relative;
+            animation: myfirst 5s;
+            /* Safari and Chrome */
+            -webkit-animation: myfirst 5s;
+        }
+
+        @keyframes myfirst {
+            /* from {
+                background: red;
+            }
+
+            to {
+                background: yellow;
+            } */
+
+            0% {
+                background: red;
+                left: 0px;
+                top: 0px;
+            }
+
+            25% {
+                background: yellow;
+                left: 200px;
+                top: 0px;
+            }
+
+            50% {
+                background: blue;
+                left: 200px;
+                top: 200px;
+            }
+
+            75% {
+                background: green;
+                left: 0px;
+                top: 200px;
+            }
+
+            100% {
+                background: red;
+                left: 0px;
+                top: 0px;
+            }
+
+        }
+
+        /* Safari and Chrome */
+        @-webkit-keyframes myfirst {
+            /* from {
+                background: red;
+            }
+
+            to {
+                background: yellow;
+            } */
+
+            0% {
+                background: red;
+                left: 0px;
+                top: 0px;
+            }
+
+            25% {
+                background: yellow;
+                left: 200px;
+                top: 0px;
+            }
+
+            50% {
+                background: blue;
+                left: 200px;
+                top: 200px;
+            }
+
+            75% {
+                background: green;
+                left: 0px;
+                top: 200px;
+            }
+
+            100% {
+                background: red;
+                left: 0px;
+                top: 0px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div></div>
+    <p>当动画完成时，会变回初始的样式。</p>
+
+</body>
+
+</html>

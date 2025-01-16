@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>CSS3_107_3D转换</title>
+    <style>
+        div {
+            width: 100px;
+            height: 75px;
+            background-color: red;
+            border: 1px solid black;
+        }
+        /* rotateX()方法，围绕其在一个给定度数X轴旋转的元素。 */
+        div#div2 {
+            transform: rotateX(120deg);
+            /* Safari and Chrome */
+            -webkit-transform: rotateX(120deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>你好。这是一个 DIV 元素。</div>
+
+    <div id="div2">rotateX()方法，y\z围绕x\y\z轴旋转的元素.</div>
+
+</body>
+
+</html>
