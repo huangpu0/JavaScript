@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>CSS3_112_图片</title>
+    <style>
+        a {
+            display: inline-block;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+        }
+
+        /* 在图片左上角添加文本信息: */
+        .container {
+            position: relative;
+        }
+
+        .topleft {
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            font-size: 18px;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            opacity: 0.3;
+        }
+
+        /* 模态弹窗--图片 */
+        #myImg {
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #myImg:hover {
+            opacity: 0.7;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        /* Modal Content (image) */
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        #caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+            height: 150px;
+        }
+
+        /* Add Animation */
+        .modal-content,
+        #caption {
+            -webkit-animation-name: zoom;
+            -webkit-animation-duration: 0.6s;
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+
+        @-webkit-keyframes zoom {
+            from {
+                -webkit-transform: scale(0)
+            }
+
+            to {
+                -webkit-transform: scale(1)
+            }
+        }
+
+        @keyframes zoom {
+            from {
+                transform: scale(0.1)
+            }
+
+            to {
+                transform: scale(1)
+            }
+        }
+
+        /* The Close Button */
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* 100% Image Width on Smaller Screens */
+        @media only screen and (max-width: 700px) {
+            .modal-content {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>缩略图作为连接</h2>
+    <p>我们使用 border 属性来创建缩略图。在图片外层添加一个链接。</p>
+    <p>点击图片查看效果：</p>
+
+    <a target="_blank" href="/Resources/1024x1024.png">
+        <img src="/Resources/1024x1024.png" alt="Paris" width="300" height="300">
+    </a>
+
+    <!-- 在图片左上角添加文本信息 -->
+    <h2>在图片左上角添加文本信息</h2>
+    <div class="container">
+        <img src="http://www.runoob.com/wp-content/uploads/2016/04/trolltunga.jpg" alt="Norway" width="1000"
+            height="300">
+        <div class="topleft">左上角</div>
+    </div>
+
+    <!-- 图片模态框 -->
+    <h2>图片模态框</h2>
+    <img id="myImg" src="http://www.runoob.com/wp-content/uploads/2016/04/trolltunga.jpg" alt="Norway" width="300"
+        height="200">
+    <!-- 模态框 -->
+    <div id="myModal" class="modal">
+        <span class="close">x</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
+
+
+    <!-- 模态窗口触发事件 -->
+    <script>
+        // 获取模态窗口
+        var modal = document.getElementById("myModal");
+
+        // 获取图片模态框，alt 属性作为图片弹出中文本描述
+        var img = document.getElementById('myImg');
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+
+        img.onclick = function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            modalImg.alt = this.alt;
+            captionText.innerHTML = this.alt;
+        }
+
+        // 获取 <span> 元素，设置关闭模态框按钮
+        var span = document.getElementsByClassName("close")[0];
+
+        // 点击 <span> 元素上的 (x), 关闭模态框
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+    </script>
+
+
+</body>
+
+</html>

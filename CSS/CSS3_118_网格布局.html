@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>CSS3_118_网格布局</title>
+    <style>
+
+        /* 网格元素 */
+        .grid-container {
+            display: grid;
+            /* grid-template-columns 和 grid-template-rows 属性来定义网格中的列和行。 */
+            grid-template-columns: auto auto auto auto;
+            background-color: #2196F3;
+            padding: 10px;
+        }
+
+        .grid-item1 {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+            /* grid-column 属性定义了网格元素列的开始和结束位置 */
+            /* grid-column: 1 / 3; */
+            /* 1 / span 2 等同  1 / 3  */
+            grid-column: 1 / span 2;
+        }
+
+        .grid-item {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        /* 网格模版 grid-area 属性可以对网格元素进行命名*/
+        .item1 {
+            grid-area: header;
+        }
+
+        .item2 {
+            grid-area: menu;
+        }
+
+        .item3 {
+            grid-area: main;
+        }
+
+        .item4 {
+            grid-area: right;
+        }
+
+        .item5 {
+            grid-area: footer;
+        }
+
+        .grid-container_ext {
+            display: grid;
+            grid:
+                'header header header header header header'
+                'menu main main main right right'
+                'menu footer footer footer footer footer';
+            grid-gap: 10px;
+            background-color: #2196F3;
+            padding: 10px;
+        }
+
+        .grid-container_ext>div {
+            background-color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 20px 0;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 网格元素 -->
+    <h1>网格元素</h1>
+    <p>网格布局父元素的 <em>display</em> 属性需要设置 <em>grid</em> 或 <em>inline-grid</em>。</p>
+    <p>网格容器内的直系子元素自动布局为网格元素。</p>
+    <div class="grid-container">
+        <div class="grid-item1">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+        <div class="grid-item">7</div>
+        <div class="grid-item">8</div>
+        <div class="grid-item">9</div>
+    </div>
+
+    <!-- 网格模版 -->
+    <h1>网格模版</h1>
+    <p>您可以使用 grid-area 属性来命名网格项。</p>
+    <p>通过使用网格容器上的 grid 属性，您可以在设置网格布局时引用该名称。</p>
+    <p>以下网格布局包含六列和三行：</p>
+    <div class="grid-container_ext">
+        <div class="item1">头部</div>
+        <div class="item2">菜单</div>
+        <div class="item3">主要内容区域</div>
+        <div class="item4">右侧</div>
+        <div class="item5">底部</div>
+    </div>
+
+</body>
+
+</html>
