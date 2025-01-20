@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>JS_02_语法</title>
+</head>
+
+<body>
+
+    <!-- typeof 操作符返回变量或表达式的类型。 -->
+    <p> typeof 操作符返回变量或表达式的类型。</p>
+    <p id="demo"></p>
+    <button onclick="myTest()">测试数据类型</button>
+
+    <!-- 全局变量 window -->
+    <p>
+        在 HTML 中, 所有全局变量都会成为 window 变量。
+    </p>
+    <p id="demo1"></p>
+
+    <script>
+
+        /// 变量的数据类型可以使用 typeof 操作符来查看：
+        document.getElementById("demo").innerHTML =
+            typeof "john" + "<br>" +
+            typeof 3.14 + "<br>" +
+            typeof false + "<br>" +
+            typeof [1, 2, 3, 4] + "<br>" +
+            typeof { name: 'john', age: 34 };
+
+        function myTest() {
+            var length = 16;
+            var x = 10;                                      // Number 通过数字字面量赋值 
+            var points = x * 10;                              // Number 通过表达式字面量赋值
+            var lastName = "Johnson";                         // String 通过字符串字面量赋值
+            var cars = ["Saab", "Volvo", "BMW"];              // Array  通过数组字面量赋值
+            cars = null;                                       // null 类型
+            var person = {
+                firstName: "John", lastName: "Doe",
+                fullName: function () {
+                    return this.firstName + " " + this.lastName;
+                }
+            };  // Object 通过对象字面量赋值
+            console.log(person.fullName());
+            console.log(person.firstName + " " + person.lastName);  // 输出对象属性值
+
+        }
+
+        /// 函数
+        function myFunction(a, b) {
+            console.log("log==" + a * b);
+            return a * b;        // 返回 a 乘以 b 的结果
+        }
+
+        /// 全局变量
+        myFunction1();
+        document.getElementById("demo1").innerHTML =
+            "我可以显示 " + window.carName;
+        function myFunction1() {
+            carName = "显示了全局变量apple";
+        }
+    </script>
+
+</body>
+
+</html>
