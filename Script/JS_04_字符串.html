@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>JS_04_字符串</title>
+</head>
+
+<body>
+
+    <!-- 字符串 -->
+    <h1 style="color: red;">JavaScript 字符串</h1>
+    <h2>中括号</h2>
+    <p>中括号 [] 返回字符串中对应索引位置的字符：</p>
+    <p id="demo"></p>
+
+    <!-- 可以是对象可以是字符串 -->
+    <p>不要创建 String 对象。它会拖慢执行速度，并可能产生其他副作用：</p>
+    <p id="demo1"></p>
+
+    <!-- 字符串拼接显示 -->
+    <p style="color:red">字符串拼接显示</p>
+    <p id="demo2"></p>
+
+    <!-- 模板字符串当作 HTML 模板使用： -->
+    <p style="color:red">模板字符串当作 HTML 模板使用：</p>
+    <p id="demo3"></p>
+
+    <!-- 运算符 -->
+    <p>点击按钮检测年龄。</p>
+    年龄:<input id="age" value="18" />
+    <p>是否达到投票年龄?</p>
+    <button onclick="myFunction()">点击按钮</button>
+    <p id="demo4"></p>
+
+    <script>
+
+        // 字符串
+        const name = "RUNOOB";
+        let letter = name[2];
+        document.getElementById("demo").innerHTML = letter;
+
+        // 可以是对象可以是字符串
+        var x = "John";              // x是一个字符串
+        var y = new String("John");  // y是一个对象
+        document.getElementById("demo1").innerHTML = typeof x + " " + typeof y;
+
+        // 字符串拼接显示
+        const name1 = 'Runoob';
+        const age = 30;
+        const message = `My name is ${name1} and I'm ${age} years old.`;
+        document.getElementById("demo2").innerHTML = message;
+
+        // 模板字符串当作 HTML 模板使用：
+        let header = "";
+        let tags = ["RUNOOB", "GOOGLE", "TAOBAO"];
+
+        let html = `<h2>${header}</h2><ul>`;
+        for (const x of tags) {
+            html += `<li>${x}</li>`;
+        }
+        html += `</ul>`;
+        document.getElementById("demo3").innerHTML = html;
+
+        // 运算符
+        function myFunction() {
+            var age, voteable;
+            age = document.getElementById("age").value;
+            voteable = (age < 18) ? "年龄太小" : "年龄已达到";
+            document.getElementById("demo4").innerHTML = voteable;
+        }
+    </script>
+
+
+</body>
+
+</html>

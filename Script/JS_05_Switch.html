@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>JS_05_Switch</title>
+</head>
+
+<body>
+
+    <!-- switch 语句 -->
+    <p>点击下面的按钮，会显示出基于今日日期的消息：</p>
+    <button onclick="myFunction()">点击这里</button>
+    <p id="demo"></p>
+
+    <!-- do-while循环 -->
+    <button onclick="myFunction1()">dowhile循环</button>
+    <p id="demo1"></p>
+
+    <!-- do-while循环 -->
+    <button onclick="myFunction2()">"BMW","Volvo","Saab", break中断, "Ford" </button>
+    <p id="demo2"></p>
+
+    <script>
+        // switch 语句
+        function myFunction() {
+            var x;
+            var d = new Date().getDay();
+            switch (d) {
+                case 6: x = "今天是星期六";
+                    break;
+                case 0: x = "今天是星期日";
+                    break;
+                default:
+                    x = "期待周末";
+            }
+            document.getElementById("demo").innerHTML = x;
+        }
+        // do-while循环
+        function myFunction1() {
+            var x = "", i = 0;
+            do {
+                x = x + "该数字为 " + i + "<br>";
+                i++;
+            }
+            while (i < 5)
+            document.getElementById("demo1").innerHTML = x;
+        }
+        // break中断list循环
+        function myFunction2() {
+            cars = ["BMW", "Volvo", "Saab", "Ford"];
+            list: {
+                document.write(cars[0] + "<br>");
+                document.write(cars[1] + "<br>");
+                document.write(cars[2] + "<br>");
+                break list;
+                document.write(cars[3] + "<br>");
+                document.write(cars[4] + "<br>");
+                document.write(cars[5] + "<br>");
+            }
+        }
+    </script>
+
+</body>
+
+</html>

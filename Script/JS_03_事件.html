@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>JS_03_事件</title>
+</head>
+
+<body>
+
+    <!-- 代码将修改 ‘demo’元素的内容  -->
+    <button onclick="getElementById('demo').innerHTML=Date()">现在的时间是?</button>
+    <p id="demo"></p>
+
+    <!-- 代码将修改自身元素的内容 (使用 this.innerHTML) -->
+    <button onclick="this.innerHTML=Date()">现在的时间是?</button>
+
+    <p>点击按钮执行 <em>displayDate()</em> 函数.</p>
+    <button onclick="displayDate()">点这里</button>
+    <script>
+        function displayDate() {
+            document.getElementById("demo").innerHTML = Date();
+        }
+    </script>
+
+</body>
+
+</html>

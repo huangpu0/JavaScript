@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>JS_06_类型转换</title>
+</head>
+
+<body>
+
+    <!-- typeof 操作符返回变量、对象、函数、表达式的类型 -->
+    <p style="color: red;"> typeof 操作符返回变量、对象、函数、表达式的类型。</p>
+    <p id="demo"></p>
+
+    <!-- constructor 属性返回变量或对象的构造函数。 -->
+    <p style="color: red;"> constructor 属性返回变量或对象的构造函数。</p>
+    <p id="demo1"></p>
+
+    <!-- 是否为数组 -->
+    <p style="color: red;">判断是否为数组。</p>
+    <p id="demo2"></p>
+
+    <script>
+
+        // typeof 操作符返回变量、对象、函数、表达式的类型
+        document.getElementById("demo").innerHTML =
+            typeof "john" + "<br>" +
+            typeof 3.14 + "<br>" +
+            typeof NaN + "<br>" +
+            typeof false + "<br>" +
+            typeof [1, 2, 3, 4] + "<br>" +
+            typeof { name: 'john', age: 34 } + "<br>" +
+            typeof new Date() + "<br>" +
+            typeof function () { } + "<br>" +
+            typeof myCar + "<br>" +
+            typeof null;
+
+        // constructor 属性返回变量或对象的构造函数。
+        document.getElementById("demo1").innerHTML =
+            "john".constructor + "<br>" +
+            (3.14).constructor + "<br>" +
+            false.constructor + "<br>" +
+            [1, 2, 3, 4].constructor + "<br>" +
+            { name: 'john', age: 34 }.constructor + "<br>" +
+            new Date().constructor + "<br>" +
+            function () { }.constructor;
+
+        // 是否为数组 
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        document.getElementById("demo2").innerHTML = isArray(fruits);
+        function isArray(myArray) {
+            return myArray.constructor.toString().indexOf("Array") > -1;
+        }
+
+        // Boolean 方法 toString() 也有相同的效果。全局方法 String() 可以将布尔值转换为字符串。
+        String(false)        // 返回 "false"
+        String(true)         // 返回 "true"
+        false.toString()     // 返回 "false"
+        true.toString()      // 返回 "true"
+
+        Number(false)     // 返回 0
+        Number(true)      // 返回 1
+
+        // 将日期转换为数字
+        var d = new Date();
+        Number(d)
+    
+    </script>
+
+
+</body>
+
+</html>
