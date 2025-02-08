@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>JS_10_验证API</title>
+</head>
+
+<body>
+
+    <p>输入数字并点击验证按钮:</p>
+    <input id="id1" type="number" min="100" max="300" required>
+    <button onclick="myFunction()">验证</button>
+    <p>如果输入的数字小于 100 或大于300，会提示错误信息。</p>
+
+    <p id="demo"></p>
+
+    <script>
+        function myFunction() {
+            // 1、checkValidity()	如果 input 元素中的数据是合法的返回 true，否则返回 false。
+            // var inpObj = document.getElementById("id1");
+            // if (inpObj.checkVisibility() == false) {
+            //     document.getElementById("demo").innerHTML = inpObj.validationMessage;
+            // } else {
+            //     document.getElementById("demo").innerHTML = "输入正确";
+            // }
+
+            // 2、rangeOverflow	设置为 true, 如果元素的值大于设置的最大值。
+            var txt = "";
+            if (document.getElementById("id1").validity.rangeOverflow) {
+                txt = "输入的值太大了";
+            } else {
+                txt = "输入正确";
+            }
+            document.getElementById("demo").innerHTML = txt;
+        }
+    </script>
+
+</body>
+
+</html>

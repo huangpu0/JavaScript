@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>JS_12_函数</title>
+</head>
+
+<body>
+
+    <p>本例调用的函数会执行一个计算，然后返回结果：</p>
+    <p id="demo1"></p>
+    <p id="demo2" style="color:red"></p>
+    <p id="demo3"></p>
+    <p id="demo4" style="color:red"></p>
+    <p id="demo5"></p>
+    <p id="demo6" style="color:red"></p>
+    <p id="demo7"></p>
+
+    <button type="button" onclick="myFunction3()">点我访问函数内部定义的变量</button>
+    <p id="demo8" style="color:red"></p>
+
+    <script>
+        function myFunction(a, b) {
+            return a * b;
+        }
+        document.getElementById("demo1").innerHTML = myFunction(4, 3);
+
+        var x = function (a, b) { return a * b };
+        document.getElementById("demo2").innerHTML = x;
+
+        var x1 = function (a, b) { return a * b };
+        document.getElementById("demo3").innerHTML = x1(4, 3);
+
+        // 设置参数默认值
+        function myFunction1(x, y = 0) {
+            return x * y;
+        }
+        document.getElementById("demo4").innerHTML = window.myFunction1(4);
+
+        // 计算所有参数之和
+        function sumAll() {
+            var i, sum = 0;
+            for (i = 0; i < arguments.length; i++) {
+                sum += arguments[i];
+            }
+            return sum;
+        }
+        document.getElementById("demo5").innerHTML =
+            sumAll(1, 123, 500, 115, 44, 88);
+
+        // 在 HTML 中 <b>this</b> 的值, 在全局函数是一个 window 对象
+        function myFunction2() {
+            return this;
+        }
+        document.getElementById("demo6").innerHTML = myFunction2();
+
+        // call() 和 apply() 是预定义的函数方法。 两个方法可用于调用函数，两个方法的第一个参数必须是对象本身。
+        var myObject;
+        myObject = myFunction.call(myObject, 10, 2);    // 返回 20
+        document.getElementById("demo7").innerHTML = myObject;
+
+        /// 访问函数内部定义的变量
+        function myFunction3() {
+            var a = 4;
+            document.getElementById("demo8").innerHTML = a * a;
+        }
+        // var a = 4;
+        // function myFunction() {
+        //     document.getElementById("demo8").innerHTML = a * a;
+        // }
+
+    </script>
+
+</body>
+
+</html>

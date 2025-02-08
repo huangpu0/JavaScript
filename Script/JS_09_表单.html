@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>JS_09_表单</title>
+    <script>
+        function validateForm() {
+            var x = document.forms["myForm"]["fname"].value;
+            if (x == null || x == "") {
+                alert("需要输入名字。");
+                return false;
+            }
+        }
+
+        function validateEmailForm() {
+            var x = document.forms["myForm"]["email"].value;
+            var atpos = x.indexOf("@");
+            var dotpos = x.lastIndexOf(".");
+            if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= x.length) {
+                alert("不是一个有效的 e-mail 地址");
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <form name="myForm1" action="demo_form.php" onsubmit="return validateForm()" method="post">
+        名字: <input type="text" name="fname">
+        <input type="submit" value="提交">
+    </form>
+
+    <form name="myForm2" action="demo_form.php" onsubmit="return validateEmailForm()" method="post">
+        邮箱: <input type="text" name="fname">
+        <input type="submit" value="提交">
+    </form>
+
+</body>
+
+</html>
