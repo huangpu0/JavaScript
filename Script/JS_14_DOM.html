@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>JS_14_DOM</title>
+</head>
+
+<body onload="checkCookies()">
+
+    <p>弹窗-提示浏览器 cookie 是否可用。</p>
+    <p>点击按钮执行 <em>displayDate()</em> 函数.</p>
+    <p id="demo1"></p>
+    <button onclick="displayDate()">点这里displayDate()</button>
+
+    <button id="myBtn">点我</button>
+    <p id="demo2"></p>
+
+    <div id="div1">
+        <p id="p1">这是一个段落。</p>
+        <p id="p2">这是另外一个段落。</p>
+    </div>
+    <button id="myBtn1" onclick="removeP1()">点我移除p1的段落</button>
+    <p id="demo3"></p>
+
+    <script>
+
+        function displayDate() {
+            document.getElementById("demo1").innerHTML = Date();
+        }
+
+        // 检查浏览器是否支持 cookie
+        function checkCookies() {
+            if (navigator.cookieEnabled) {
+                alert("Cookies 可用")
+            }
+            else {
+                alert("Cookies 不可用")
+            }
+        }
+
+        /// 当传递参数值时，使用"匿名函数"调用带参数的函数：
+        var p1 = 5;
+        var p2 = 7;
+        document.getElementById("myBtn").addEventListener("click", function () {
+            myFunction(p1, p2);
+        });
+        function myFunction(a, b) {
+            var result = a * b;
+            document.getElementById("demo2").innerHTML = result;
+        }
+
+        /// 创建新元素并添加到文档中：
+        var para = document.createElement("p");
+        var node = document.createTextNode("这是一个新的段落。");
+        para.appendChild(node);
+
+        var element = document.getElementById("div1");
+        element.appendChild(para);
+
+        function removeP1() {
+            element.removeChild(document.getElementById("p1"));
+        }
+
+        /// NodeList 中的元素可以通过索引(以 0 为起始位置)来访问。也可以使用 querySelectorAll() 方法来获取所有匹配的元素。
+        var myNodelist = document.querySelectorAll("p");
+        document.getElementById("demo3").innerHTML = "第二个段落的内容为:<span style='color:red;'> " + myNodelist[1].innerHTML + '</span>';
+
+    </script>
+
+</body>
+
+</html>
