@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>JS_13_类</title>
+</head>
+
+<body>
+
+    <h2>JavaScript 类</h2>
+
+    <p>如何使用 JavaScript 类</p>
+
+    <p id="demo1"></p>
+    <p id="demo2" style="color: red;"></p>
+    <p id="demo3"></p>
+    <p id="demo4" style="color: red;"></p>
+
+    <script>
+
+        // 一、定义类
+        class Runoob {
+            constructor(name, url) {
+                this.name = name;
+                this.url = url;
+            }
+        }
+
+        let site = new Runoob("菜鸟教程", "https://www.runoob.com");
+        document.getElementById("demo1").innerHTML =
+            site.name + ": " + site.url;
+
+        // 一、1.定义类1
+        class Runoob1 {
+            constructor(name, year) {
+                this.name = name;
+                this.year = year;
+            }
+            age() {
+                let date = new Date();
+                return date.getFullYear() - this.year;
+            }
+        }
+
+        let runoob = new Runoob1("菜鸟教程", 2018);
+        document.getElementById("demo2").innerHTML =
+            "菜鸟教程 " + runoob.age() + " 岁了。";
+
+        // 二、类继承
+        class Site {
+            constructor(name) {
+                this.sitename = name;
+            }
+            present() {
+                return '我喜欢' + this.sitename;
+            }
+        }
+
+        class Runoob2 extends Site {
+            constructor(name, age) {
+                super(name);
+                this.age = age;
+            }
+            show() {
+                return this.present() + ', 它创建了 ' + this.age + ' 年。';
+            }
+        }
+
+        let noob = new Runoob2("菜鸟教程", 5);
+        document.getElementById("demo3").innerHTML = noob.show();
+
+        // 三、静态方法
+        class Runoob3 {
+            constructor(name) {
+                this.name = name;
+            }
+            static hello(x) {
+                return "Hello " + x.name;
+            }
+        }
+        let noob1 = new Runoob3("菜鸟教程");
+        // 可以在类中调用 'hello()' 方法
+        document.getElementById("demo4").innerHTML = Runoob3.hello(noob1);
+
+    </script>
+
+</body>
+
+</html>
